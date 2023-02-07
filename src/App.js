@@ -11,7 +11,7 @@ const App = () => {
   // side effect in a component, you want to think about which state and/or props it should
   // sync up with, if any.
 
-  const [characters, setCharacters] = useState('The Force is Missing');
+  const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
     axios.get(`https://swapi.dev/api/people/`)
@@ -27,9 +27,10 @@ const App = () => {
     <div className="App">
       <h1 className="Header">Characters</h1>
       {
-        characters.map((char, idx) => {
-          return <Character char={char} key={idx} />
-        })
+
+characters.map((char, idx) => {
+  return <Character char={char} key={idx} />
+})
       }
     </div>
   )
